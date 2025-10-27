@@ -45,20 +45,17 @@ def check_in_range(a: int, b: int) -> int:
 
 if __name__ == "__main__":
     a = int(input("a: "))
+
     try:
         print("(Ha csak n=a-ra, akkor nem kell)")
         b = int(input("b: "))
-    except Exception:
-        b = None
-
-    if b is None:
-        works = check_for_n(a)
-        print("Működik" if works else "Nem működik...")
-
-    else:
         err = check_in_range(a, b)
         print(
             f"n = {a}..{b} mindegyikre működik! :D"
             if err == 0
             else f"Sajnos {a}..{b} közül n={err}-re nem működik... :(",
         )
+
+    except Exception:
+        works = check_for_n(a)
+        print("Működik" if works else "Nem működik...")
