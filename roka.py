@@ -12,10 +12,10 @@ def check_for_n(n: int) -> bool:
     """Működik-e a stratégia adott n rókalyukkal?"""
 
     steps = gen_steps(n)
-    holes = [{n} for n in range(1, n + 1)]
+    holes = [True for _ in range(1, n + 1)]
 
     for i, step in enumerate(steps):
-        new_holes = [set() for _ in range(1, n + 1)]
+        new_holes = [False for _ in range(1, n + 1)]
         for i, hole in enumerate(holes):
             if i == step - 1:
                 continue
